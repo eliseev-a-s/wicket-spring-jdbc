@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update User</title>
+</head>
+<body>
+    <form wicket:id="form">
+        <fieldset>
+            <legend>Form</legend>
+            <span wicket:id="feedback"/>
+            <table>
+                <tr>
+                    <td valign="top">
+                        <label for="name">Name</label>
+                        <input wicket:id="name" id="name" type="text" size="40"/>
+                        <label for="email">EMAIL</label>
+                        <input wicket:id="email" id="email" type="text" size="40"/>
+                        <button wicket:id="submit">Сохранить</button>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>

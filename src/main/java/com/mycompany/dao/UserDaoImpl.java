@@ -14,13 +14,13 @@ import java.util.List;
 @Repository
 public class UserDaoImpl implements UserDao {
 
-    private Connection connection = DBHelper.getConnection();
+    private final Connection connection = DBHelper.getConnection();
 
     @Override
     public User findByName(String name) {
 
         User user = null;
-        try (PreparedStatement preparedStatement = connection.prepareStatement("select * from users where name =?")) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE name =?")) {
             preparedStatement.setString(1, name);
             ResultSet rs = preparedStatement.executeQuery();
 
@@ -77,10 +77,26 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void removeUser(Long id) {
 
+        try (PreparedStatement statement = connection.prepareStatement("DELETE FROM users WHERE id = ?;")) {
+            statement.setLong(1, id);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void updateUser(User user) {
 
+        try (PreparedStatement statement = connection.prepareStatement("UPDATE users SET name = ?, email =? WHERE id = ?;")) {
+
+            statement.setString(1, user.getName());
+            statement.setString(2, user.getEmail());
+            statement.setLong(3, user.getId());
+
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

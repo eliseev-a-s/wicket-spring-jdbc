@@ -1,5 +1,6 @@
 package com.mycompany;
 
+import com.mycompany.view.HomePage;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;

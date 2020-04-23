@@ -22,16 +22,20 @@
 				</table>
 			</fieldset>
 		</form>
-		<table>
+		<table wicket:id="table">
 			<tr>
 				<th>ID</th>
 				<th>Name</th>
 				<th>Email</th>
+				<th>Edit</th>
+				<th>Delete</th>
 			</tr>
 			<tr wicket:id="users">
 				<td wicket:id="id"></td>
 				<td wicket:id="name"></td>
 				<td wicket:id="email"></td>
+				<td wicket:id="edit"><a href="#">edit</a></td>
+				<td wicket:id="delete"><a href="#">delete</a></td>
 			</tr>
 		</table>
 	</body>

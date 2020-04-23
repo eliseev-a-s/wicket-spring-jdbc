@@ -22,6 +22,12 @@ public class User implements Serializable {
         this.email = email;
     }
 
+    public User(Serializable id, Serializable name, Serializable email) {
+        this.id = (Long) id;
+        this.name = (String) name;
+        this.email = (String) email;
+    }
+
     public Long getId() {
         return id;
     }

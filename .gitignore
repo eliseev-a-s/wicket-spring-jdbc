@@ -1,5 +1,3 @@
-**/.idea/
-**/*.iml
-**/target/
-/.project
-*.log
+.idea
+target
+*.iml

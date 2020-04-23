@@ -12,5 +12,8 @@
     <Root level="WARN">
       <AppenderRef ref="CONSOLE"/>
     </Root>
+      <logger name="Config" level="INFO" additivity="false">
+          <AppenderRef ref="CONSOLE"/>
+      </logger>
   </Loggers>
 </log4j:configuration>
