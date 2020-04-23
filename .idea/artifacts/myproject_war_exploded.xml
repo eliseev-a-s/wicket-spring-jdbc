@@ -1,0 +1,52 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="myproject:war exploded">
+    <output-path>$PROJECT_DIR$/target/myproject-1.0-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>myproject</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="myproject" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/org/apache/wicket/wicket-core/7.17.0-SNAPSHOT/wicket-core-7.17.0-20200421.214917-4.jar" output-file-name="wicket-core-7.17.0-SNAPSHOT.jar" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-collections4:4.2" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/org/apache/wicket/wicket-request/7.17.0-SNAPSHOT/wicket-request-7.17.0-20200421.214334-4.jar" output-file-name="wicket-request-7.17.0-SNAPSHOT.jar" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/org/apache/wicket/wicket-util/7.17.0-SNAPSHOT/wicket-util-7.17.0-20200421.214300-4.jar" output-file-name="wicket-util-7.17.0-SNAPSHOT.jar" />
+          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.4" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.5" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/org/apache/wicket/wicket-extensions/7.17.0-SNAPSHOT/wicket-extensions-7.17.0-20200421.215138-4.jar" output-file-name="wicket-extensions-7.17.0-SNAPSHOT.jar" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-slf4j-impl:2.6.2" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.6.2" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-core:2.6.2" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.2.0.RELEASE" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/org/apache/wicket/wicket-spring/7.17.0-SNAPSHOT/wicket-spring-7.17.0-20200421.215337-4.jar" output-file-name="wicket-spring-7.17.0-SNAPSHOT.jar" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/org/apache/wicket/wicket-ioc/7.17.0-SNAPSHOT/wicket-ioc-7.17.0-20200421.215239-4.jar" output-file-name="wicket-ioc-7.17.0-SNAPSHOT.jar" />
+          <element id="library" level="project" name="Maven: cglib:cglib:3.1" />
+          <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
+          <element id="library" level="project" name="Maven: org.ow2.asm:asm-util:5.0.3" />
+          <element id="library" level="project" name="Maven: org.ow2.asm:asm-tree:5.0.3" />
+          <element id="library" level="project" name="Maven: org.ow2.asm:asm:5.0.3" />
+          <element id="library" level="project" name="Maven: com.h2database:h2:1.4.200" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/myproject-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="myproject/web/Web" />
+    </root>
+  </artifact>
+</component>

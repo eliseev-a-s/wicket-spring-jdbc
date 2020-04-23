@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+		<meta charset="utf-8" />
+		<title>Apache Wicket Quickstart</title>
+	</head>
+	<body>
+		<form wicket:id="form">
+			<fieldset>
+				<legend>Form</legend>
+				<span wicket:id="feedback"/>
+				<table>
+					<tr>
+						<td valign="top">
+							<label for="name">Name</label>
+							<input wicket:id="name" id="name" type="text" size="40"/>
+							<label for="email">EMAIL</label>
+							<input wicket:id="email" id="email" type="text" size="40"/>
+							<button wicket:id="submit">Сохранить</button>
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+		</form>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Email</th>
+			</tr>
+			<tr wicket:id="users">
+				<td wicket:id="id"></td>
+				<td wicket:id="name"></td>
+				<td wicket:id="email"></td>
+			</tr>
+		</table>
+	</body>
+</html>
