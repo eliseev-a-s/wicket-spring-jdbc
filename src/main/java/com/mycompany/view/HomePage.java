@@ -58,7 +58,10 @@ public class HomePage extends WebPage {
 					users.add(userService.findByName(user.getName()));
 					logger.info("Created user. Name: " + user.getName() + ", EMAIL: " + user.getEmail());
 					target.add(form);
-				} else feedbackPanel.error("Пользователь с таким именем уже существует!");
+				} else {
+					logger.info("Пользователь с именем " + user.getName() + " уже существует!");
+					feedbackPanel.error("Пользователь с таким именем уже существует!");
+				}
 			}
 		});
 
