@@ -12,8 +12,11 @@
     <Root level="WARN">
       <AppenderRef ref="CONSOLE"/>
     </Root>
-      <logger name="Config" level="INFO" additivity="false">
+      <logger name="DataInitializer" level="INFO" additivity="false">
           <AppenderRef ref="CONSOLE"/>
       </logger>
+    <logger name="Admin" level="INFO" additivity="false">
+      <AppenderRef ref="CONSOLE"/>
+    </logger>
   </Loggers>
 </log4j:configuration>

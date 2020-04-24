@@ -18,10 +18,15 @@ import org.apache.wicket.markup.repeater.data.DataView;
 import org.apache.wicket.markup.repeater.data.ListDataProvider;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
+import org.apache.wicket.validation.validator.EmailAddressValidator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class HomePage extends WebPage {
+
+	private static final Logger logger = LoggerFactory.getLogger("Admin");
 
 	@SpringBean
 	private UserService userService;
@@ -39,7 +44,7 @@ public class HomePage extends WebPage {
 		final FeedbackPanel feedbackPanel = new FeedbackPanel("feedback");
 
 		form.add(new TextField<String>("name").setRequired(true));
-		form.add(new TextField<String>("email").setRequired(true));
+		form.add(new TextField<String>("email").add(EmailAddressValidator.getInstance()).setRequired(true));
 		form.add(feedbackPanel);
 		form.add(submitButton);
 		form.setOutputMarkupId(true);
@@ -49,9 +54,11 @@ public class HomePage extends WebPage {
 
 			@Override
 			protected void onSubmit(AjaxRequestTarget target) {
-				userService.createUser(new User(user.getName(), user.getEmail()));
-				users.add(userService.findByName(user.getName()));
-				target.add(form);
+				if (userService.createUser(new User(user.getName(), user.getEmail()))) {
+					users.add(userService.findByName(user.getName()));
+					logger.info("Created user. Name: " + user.getName() + ", EMAIL: " + user.getEmail());
+					target.add(form);
+				} else feedbackPanel.error("Пользователь с таким именем уже существует!");
 			}
 		});
 
@@ -83,6 +90,7 @@ public class HomePage extends WebPage {
 						User user = item.getModelObject();
 						userService.removeUser(user.getId());
 						users.remove(user);
+						logger.info("Delete user. ID: " + user.getId() + ", Name: " + user.getName() + ", EMAIL: " + user.getEmail());
 						target.add(webMarkupContainer);
 					}
 				});

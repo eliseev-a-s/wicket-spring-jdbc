@@ -63,7 +63,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void createUser(User user) {
+    public boolean createUser(User user) {
 
         try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO users (name, email) VALUES (?, ?);")) {
             preparedStatement.setString(1, user.getName());
@@ -71,7 +71,9 @@ public class UserDaoImpl implements UserDao {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
+        return true;
     }
 
     @Override
