@@ -30,11 +30,13 @@ public class UpdateUser extends WebPage {
 
         final Form<User> form = new Form<>("form", new CompoundPropertyModel<>(user));
         final Button submitButton = new Button("submit");
+        final Button submitButtonCollBack = new Button("collback");
 
         form.add(new FeedbackPanel("feedback"));
         form.add(new TextField<String>("name").setRequired(true));
         form.add(new TextField<String>("email").setRequired(true));
         form.add(submitButton);
+        form.add(submitButtonCollBack);
         add(form);
 
         submitButton.add(new AjaxFormSubmitBehavior(form, "click") {
@@ -43,6 +45,14 @@ public class UpdateUser extends WebPage {
             protected void onSubmit(AjaxRequestTarget target) {
                 userService.updateUser(user);
                 logger.info("Update user. ID: " + user.getId() + ", Name: " + user.getName() + ", EMAIL: " + user.getEmail());
+                setResponsePage(HomePage.class);
+            }
+        });
+
+        submitButtonCollBack.add(new AjaxFormSubmitBehavior(form, "click") {
+
+            @Override
+            protected void onSubmit(AjaxRequestTarget target) {
                 setResponsePage(HomePage.class);
             }
         });
