@@ -32,7 +32,7 @@
 		<!-- allowed values: R7, 1.0, 1.5, 2.0 or none -->
 		<wtp.version>none</wtp.version>
 		<spring.version>5.2.0.RELEASE</spring.version>
-		<dbh2.version>1.4.200</dbh2.version>
+		<dbh2.version>2.1.210</dbh2.version>
 	</properties>
 	<dependencies>
 		<!--  WICKET DEPENDENCIES -->
